@@ -1,0 +1,10 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Edit an existing article</h1>
+    <%= render 'form', article: @article%>
+    <div class="mt-5">
+      <%= link_to 'Back to the list', articles_path, class:'btn btn-outline-secondary' %>
+      <%= link_to 'Delete', article_path, method: :delete, data: {confirm: 'Are you sure?'}, class:'btn btn-outline-secondary' %>
+    </div>
+    </div>
+</div>

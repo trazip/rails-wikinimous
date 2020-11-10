@@ -1,0 +1,22 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">List of Articles</h1>
+    <p class="lead"><%= @articles.count %> articles</p>
+    <%= link_to 'Add a new article', new_article_path, class:'btn btn-outline-secondary' %>
+    </div>
+</div>
+<div class="container">
+<% @articles.each do |article| %>
+  <div class="card text-center mb-5">
+    <div class="card-body">
+      <h5 class="card-title"><%= article.title %></h5>
+      <p class="card-text"><%= article.content %></p>
+      <%= link_to 'Go to article', article_path(article), class:'btn btn-primary' %>
+      <%= link_to 'Edit', edit_article_path(article), class:'btn btn-warning' %>
+      <%= link_to 'Delete', article_path(article), class:'btn btn-danger', method: :delete, data: {confirm: "Are you sure to delete #{article.title}?"} %>
+    </div>
+  </div>
+<% end %>
+</div>
+
+
